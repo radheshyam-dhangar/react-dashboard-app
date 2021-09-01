@@ -3,7 +3,7 @@ To get up and running with the template, you just have to run the git commands b
 
 git clone https://github.com/radheshyam-dhangar/react-dashboard-app.git .\
 cd react-dashboard-app.\
-yarn install
+yarn install.\
 yarn start
 
 # Getting Started with Create React App
