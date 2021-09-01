@@ -21,6 +21,7 @@ const useStyles = makeStyles(() =>
       justifyContent: "space-between",
       width: '100%',
       position: 'relative',
+      marginBottom: '20px',
     },
     messageEditor: {
       width: '99%',
@@ -40,10 +41,10 @@ const useStyles = makeStyles(() =>
       flexGrow: 30,
       display: 'flow-root',
       marginTop: '20px',
-      position: 'fixed',
-      bottom: '10px',
-      left: '92px',
-      width: '92%',
+      position: 'absolute',
+      bottom: '-45px',
+      left: '0px',
+      width: '100%',
     },
     msgEeditorContainer: {
       display: 'flex',
