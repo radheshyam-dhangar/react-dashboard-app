@@ -42,7 +42,11 @@ const ChatBoardText = (props: Props) => {
     const msgInputHandler = (data: any) => {
         setEnableSendBtn(data.target.value)
     }
-
+    // const handleKeyDown = (event: any) => {
+    //     if (event.key === 'Enter' && !event.shiftKey) {
+    //         onSubmit(event.target.value);
+    //     }
+    // };
     return (
         <form onSubmit={handleSubmit(onSubmit)} onChange={msgInputHandler} className={classes.root}>
             <input {...register('firstName')}
@@ -54,7 +58,7 @@ const ChatBoardText = (props: Props) => {
             <IconButton
                 type="submit"
                 className="send-btn"
-                disabled={enableSendBtn.length < 1}
+                disabled={enableSendBtn.length < 0}
             >
                 <SendIcon />
             </IconButton>

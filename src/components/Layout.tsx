@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3),
+      padding: theme.spacing(1),
       minHeight: `calc(100vh - ${FOOTER_HEIGHT}px)`,
       background: theme.palette.background.paper,
       marginLeft: theme.spacing(7) + 1,
