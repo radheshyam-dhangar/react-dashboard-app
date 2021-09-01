@@ -1,8 +1,8 @@
 # Install
 To get up and running with the template, you just have to run the git commands below:
 
-git clone https://github.com/radheshyam-dhangar/react-dashboard-app.git
-cd react-dashboard-app
+git clone https://github.com/radheshyam-dhangar/react-dashboard-app.git .\
+cd react-dashboard-app.\
 yarn install
 yarn start
 
