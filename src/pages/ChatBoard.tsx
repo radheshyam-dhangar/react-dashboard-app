@@ -11,7 +11,6 @@ import ChatBoardText from "./SubPages/ChatBoardText";
 // import custom css
 import './index.css';
 
-
 // define css-in-js
 const useStyles = makeStyles(() =>
   createStyles({
@@ -20,14 +19,6 @@ const useStyles = makeStyles(() =>
       gridTemplateRows: '1fr 16fr 1fr',
       height: '100vh',
       position: 'relative',
-
-      // flex: 1,
-      // display: "inline-block",
-      // flexDirection: "row",
-      // justifyContent: "space-between",
-      // width: '100%',
-      // position: 'relative',
-      // marginBottom: '20px',
     },
     appBar: {
       top: 'auto',
@@ -101,7 +92,10 @@ const ChatBoard: FC<{}> = (): ReactElement => {
                     /></div>
                 </div>
                 {sendMsg.map((obj, index) => (
-                  obj.length !== 0 ? (
+                  typeof obj !== "undefined"
+                    && obj !== null
+                    && obj.length !== null
+                    && obj.length > 0 ? (
                     <div key={'msg' + index++} className="msg-bubble">
                       <div className="msg-item">{obj}</div>
                     </div>

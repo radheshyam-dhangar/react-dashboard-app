@@ -1,8 +1,8 @@
-import { createStyles, makeStyles } from '@material-ui/core';
+import { createStyles, InputBase, makeStyles } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 // define css-in-js
 const useStyles = makeStyles(() =>
     createStyles({
@@ -26,6 +26,8 @@ interface Props {
     dynamicTextHandler: (msgItem: any) => void,
 }
 const ChatBoardText = (props: Props) => {
+    const inputElement = useRef<HTMLInputElement>(null);
+    const [inputText, setInputText] = useState<string>('');
     const classes = useStyles();
     const { dynamicTextHandler } = props;
     const {
@@ -33,32 +35,47 @@ const ChatBoardText = (props: Props) => {
         handleSubmit,
         reset,
     } = useForm();
-    const [enableSendBtn, setEnableSendBtn] = useState('')
+    const [enableSendBtn, setEnableSendBtn] = useState(false);
     const onSubmit = (data: any) => {
         dynamicTextHandler(data.firstName)
         setEnableSendBtn(data.firstName)
+        setInputText('')
         reset();
     }
     const msgInputHandler = (data: any) => {
-        setEnableSendBtn(data.target.value)
+        if (data.target.value.length) {
+            setInputText(data.target.value);
+            setEnableSendBtn(true)
+        }
     }
-    // const handleKeyDown = (event: any) => {
+    // const handleKeyDown = (event: React.KeyboardEvent) => {
     //     if (event.key === 'Enter' && !event.shiftKey) {
-    //         onSubmit(event.target.value);
+    //         // console.log(event, ' ++++ test KeyboardEvent')
+    //         handleSubmit(onSubmit)
+    //         // onSubmit(event.currentTarget);
     //     }
     // };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} onChange={msgInputHandler} className={classes.root}>
-            <input {...register('firstName')}
+
+            <InputBase
+                {...register('firstName')}
+                type="textarea"
+                className="message-editor"
                 placeholder="Type a message..."
-                autoComplete="off"
-                className={classes.messageEditor}
+                value={inputText}
+                inputRef={inputElement}
                 onChange={() => msgInputHandler}
+                // onKeyDown={handleKeyDown}
+                multiline
+                rowsMax="2"
             />
+
             <IconButton
                 type="submit"
                 className="send-btn"
-                disabled={enableSendBtn.length < 0}
+                disabled={!enableSendBtn}
             >
                 <SendIcon />
             </IconButton>
