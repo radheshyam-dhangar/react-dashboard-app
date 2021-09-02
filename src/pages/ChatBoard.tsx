@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Paper } from '@material-ui/core';
 // import media from assets 
 import naturelWallpaper from '../assets/nature-wallpaper.jpg';
+import vidpath from '../assets/humankindness.mp4';
 import { CardMedia, createStyles, makeStyles } from '@material-ui/core';
 
 // constants
@@ -90,6 +91,17 @@ const ChatBoard: FC<{}> = (): ReactElement => {
                       image={naturelWallpaper}
                       title="naturel Wallpaper"
                     /></div>
+                </div>
+                <div className="msg-bubble">
+                  <div className="msg-item">
+                    <CardMedia
+                      style={{ height: '100%', width: '200', backgroundColor: '#000' }}
+                      component="video"
+                      title="Media Title"
+                      src={vidpath}
+                      controls
+                    />
+                  </div>
                 </div>
                 {sendMsg.map((obj, index) => (
                   typeof obj !== "undefined"

@@ -28,6 +28,10 @@
 .msg-item{     
     padding: 10px;
 }
+.msg-item video {
+    width: 300px;
+    height: auto;
+}
 .conv-view-items {
     overflow: auto;
     overflow-x: hidden;
@@ -63,3 +67,4 @@
     padding-top: 4px;
     padding-bottom: 4px;
   }
+ 

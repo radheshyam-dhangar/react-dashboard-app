@@ -12,7 +12,7 @@ export const routes: Array<RouteItem> = [
     key: "router-dashboard",
     title: "Chat board",
     tooltip: "Chat board",
-    path: "/chatboard",
+    path: "/",
     enabled: true,
     component: ChatBoard,
     icon: ChatIcon,

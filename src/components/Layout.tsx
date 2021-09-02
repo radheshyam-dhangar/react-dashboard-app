@@ -78,6 +78,7 @@ const Layout: FC<LayoutProps> = ({
       >
         <div className={classes.toolbar} />
         {children}
+
       </main>
       <footer>
         <Footer />

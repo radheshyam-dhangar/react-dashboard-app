@@ -11,8 +11,6 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import Brightness7Icon from "@material-ui/icons/Brightness7";
-import UserIcon from "@material-ui/icons/AccountCircle";
-
 // constants
 import { APP_TITLE, DRAWER_WIDTH } from "../utils/constants";
 
@@ -106,9 +104,6 @@ const Header = ({
               <Brightness7Icon />
             </Tooltip>
           )}
-        </IconButton>
-        <IconButton size="small" color="inherit">
-          <UserIcon />
         </IconButton>
       </Toolbar>
     </AppBar>

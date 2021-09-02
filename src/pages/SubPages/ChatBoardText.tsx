@@ -36,25 +36,21 @@ const ChatBoardText = (props: Props) => {
         reset,
     } = useForm();
     const [enableSendBtn, setEnableSendBtn] = useState(false);
+
+    // define input value submision handler
     const onSubmit = (data: any) => {
         dynamicTextHandler(data.firstName)
         setEnableSendBtn(data.firstName)
         setInputText('')
         reset();
     }
+    // define input change handler
     const msgInputHandler = (data: any) => {
         if (data.target.value.length) {
             setInputText(data.target.value);
             setEnableSendBtn(true)
         }
     }
-    // const handleKeyDown = (event: React.KeyboardEvent) => {
-    //     if (event.key === 'Enter' && !event.shiftKey) {
-    //         // console.log(event, ' ++++ test KeyboardEvent')
-    //         handleSubmit(onSubmit)
-    //         // onSubmit(event.currentTarget);
-    //     }
-    // };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} onChange={msgInputHandler} className={classes.root}>
@@ -67,7 +63,6 @@ const ChatBoardText = (props: Props) => {
                 value={inputText}
                 inputRef={inputElement}
                 onChange={() => msgInputHandler}
-                // onKeyDown={handleKeyDown}
                 multiline
                 rowsMax="2"
             />
@@ -76,6 +71,7 @@ const ChatBoardText = (props: Props) => {
                 type="submit"
                 className="send-btn"
                 disabled={!enableSendBtn}
+
             >
                 <SendIcon />
             </IconButton>
