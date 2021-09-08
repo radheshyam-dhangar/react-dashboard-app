@@ -19,7 +19,7 @@ function* fetchTodoSaga() {
                 todos: response.data,
             })
         );
-    } catch (e: any) {
+    } catch (e) {
         yield put(
             fetchTodoFailure({
                 error: e.message,
