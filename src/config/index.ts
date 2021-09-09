@@ -3,8 +3,8 @@ import ViewListIcon from '@material-ui/icons/ViewList';
 import ChatIcon from '@material-ui/icons/Chat';
 // interface
 import RouteItem from "../model/RouteItem.model";
-import ProfileList from "../pages/ProfileList";
 import ChatBoard from "../pages/ChatBoard";
+import TodoList from '../pages/TodoList';
 
 // define app routes
 export const routes: Array<RouteItem> = [
@@ -23,7 +23,7 @@ export const routes: Array<RouteItem> = [
     tooltip: "Profile List",
     path: "/profile-list",
     enabled: true,
-    component: ProfileList,
+    component: TodoList,
     icon: ViewListIcon,
     appendDivider: true,
   },
